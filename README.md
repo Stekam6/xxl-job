@@ -6,7 +6,7 @@
         <br>
         <a href="https://www.xuxueli.com/xxl-job/"><strong>-- Home Page --</strong></a>
         <br>
-        <br>
+        <br>  
         <a href="https://github.com/xuxueli/xxl-job/actions">
             <img src="https://github.com/xuxueli/xxl-job/workflows/Java%20CI/badge.svg" >
         </a>

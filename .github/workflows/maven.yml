@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B install -DskipTests --file pom.xml
       # NEU: alle aufgelösten Abhängigkeiten exportieren (kein Scope-Filter)
       
       - name: Export resolved dependencies

@@ -26,11 +26,17 @@ jobs:
       - name: Export resolved dependencies
         run: mvn -B dependency:copy-dependencies -DoutputDirectory=deps
 
+      - name: Collect deps into one folder
+        run: |
+          mkdir -p all-deps
+          find . -path '*/deps/*.jar' -exec cp -n {} all-deps/ \;
+          ls all-deps | wc -l
+      
       - name: Upload dependencies artifact
         uses: actions/upload-artifact@v4
         with:
           name: maven-deps
-          path: deps
+          path: all-deps
 
   dynamic-detection:
     runs-on: ubuntu-latest

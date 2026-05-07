@@ -59,12 +59,12 @@ jobs:
         run: curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 
       - name: Run detector
-        run: java -jar dynamicDetection/detectionSystem-1.0-SNAPSHOT-all.jar --mode=light .
+        run: java -jar dynamicDetection/detectionSystem-1.0-SNAPSHOT-all.jar --mode=full .
 
       - uses: actions/upload-artifact@v4
         with:
           name: detection-results
           path: |
-            light-dynamic-detection-results.xlsx
-            light-dynamic-detection-results.csv
+            dynamic-detection-results.xlsx
+            dynamic-detection-results.csv
             sbom-output.json
